@@ -133,7 +133,7 @@ extern "C"
 #define EDB(addr) ((addr&0x07)-1)
 
 /* Structure for generic part of configuration descriptor */
-struct  __attribute__((__packed__)) abromConfigurationDescriptorGenric
+struct abromConfigurationDescriptorGenric
 {
 	BYTE sizeof_config_descriptor;            // bLength
  	BYTE desc_type_config;                    // bDescriptorType: 2
@@ -147,7 +147,7 @@ struct  __attribute__((__packed__)) abromConfigurationDescriptorGenric
 };
 
 /************************************************CDC Descriptor**************************/
-struct  __attribute__((__packed__)) abromConfigurationDescriptorCdc
+struct abromConfigurationDescriptorCdc
 {
 // interface descriptor (9 bytes)
     BYTE blength_intf;	                      // blength: interface descriptor size
