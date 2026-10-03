@@ -1009,6 +1009,11 @@ BYTE usbGetConfigurationDescriptor (VOID)
     wBytesRemainingOnIEP0 = usbConfigurationsSizes[activeInterfaceIndex];
     usbSendDataPacketOnEP0((PBYTE)usbConfigurationDescriptors[activeInterfaceIndex]);
 #else
+#ifdef MORIMORI
+    PBYTE ptr = &abromConfigurationDescriptorGroup;
+//    ptr[8] = sizeof(struct abromConfigurationDescriptorCdc);
+    ptr[8] = sizeof(struct abromConfigurationDescriptorGenric);
+#endif
     wBytesRemainingOnIEP0 = sizeof(abromConfigurationDescriptorGroup);
     usbSendDataPacketOnEP0((PBYTE)&abromConfigurationDescriptorGroup);
 #endif	

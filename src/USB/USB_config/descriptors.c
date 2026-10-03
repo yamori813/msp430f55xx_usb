@@ -47,7 +47,7 @@ BYTE const abromDeviceDescriptor[SIZEOF_DEVICE_DESCRIPTOR] = {
 /*-----------------------------------------------------------------------------+
 | Configuration Descriptor                                                     |
 |-----------------------------------------------------------------------------*/
-const struct abromConfigurationDescriptorGroup abromConfigurationDescriptorGroup=
+struct abromConfigurationDescriptorGroup abromConfigurationDescriptorGroup=
 {
     /* Generic part */
     {

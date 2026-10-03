@@ -133,7 +133,7 @@ extern "C"
 #define EDB(addr) ((addr&0x07)-1)
 
 /* Structure for generic part of configuration descriptor */
-struct abromConfigurationDescriptorGenric
+struct  __attribute__((__packed__)) abromConfigurationDescriptorGenric
 {
 	BYTE sizeof_config_descriptor;            // bLength
  	BYTE desc_type_config;                    // bDescriptorType: 2
@@ -147,7 +147,7 @@ struct abromConfigurationDescriptorGenric
 };
 
 /************************************************CDC Descriptor**************************/
-struct abromConfigurationDescriptorCdc
+struct  __attribute__((__packed__)) abromConfigurationDescriptorCdc
 {
 // interface descriptor (9 bytes)
     BYTE blength_intf;	                      // blength: interface descriptor size
@@ -325,7 +325,7 @@ struct  abromConfigurationDescriptorGroup
 #endif
 };
 
-extern const struct  abromConfigurationDescriptorGroup abromConfigurationDescriptorGroup;
+extern struct  abromConfigurationDescriptorGroup abromConfigurationDescriptorGroup;
 extern BYTE const abromDeviceDescriptor[SIZEOF_DEVICE_DESCRIPTOR];
 extern BYTE const abromStringDescriptor[];
 //extern BYTE const abromReportDescriptor[SIZEOF_REPORT_DESCRIPTOR];
